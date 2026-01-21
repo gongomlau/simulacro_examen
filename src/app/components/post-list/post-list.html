@@ -1,1 +1,9 @@
-<p>post-list works!</p>
+<div *ngIf="$posts | async as posts">
+    <ul>
+      <li *ngFor="let post of $posts | async">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+        <button (click)="borrar(post)">Borrar</button>
+      </li>
+    </ul>
+</div>
