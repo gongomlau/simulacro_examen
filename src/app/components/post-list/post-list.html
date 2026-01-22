@@ -3,6 +3,7 @@
       <li *ngFor="let post of $posts | async">
         <h2>{{ post.title }}</h2>
         <p>{{ post.body }}</p>
+        <button type="button" [routerLink]="['/posts/edit', post.id]">Editar</button>
         <button (click)="borrar(post)">Borrar</button>
       </li>
     </ul>

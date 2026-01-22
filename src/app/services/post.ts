@@ -18,7 +18,7 @@ export class PostService {
     }
 
     getPostById(id:number): Observable<Post> {
-        const url = '${this.apiUrl}/${id}';
+        const url = this.apiUrl + '/'+ id;
         return this.http.get<Post>(url)
     }
 
@@ -27,12 +27,12 @@ export class PostService {
     }
 
     updatePost(id:number, post:Post): Observable<Post> {
-        const url = '${this.apiUrl}/${post.id}';
+        const url = this.apiUrl + '/'+ id;
         return this.http.put<Post>(url,post)
     }
 
     deletePost(id:number): Observable<void> {
-        const url = '${this.apiUrl}/${id}';
+        const url = `${this.apiUrl}/${id}`;
         return this.http.delete<void>(url);
     }
 }

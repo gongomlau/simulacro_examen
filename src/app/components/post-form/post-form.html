@@ -1,5 +1,5 @@
 <div>
-    <h2>{{ isEdit ? 'Editar POst' : 'Nuevo Post' }}</h2>
+    <h2>{{ isEdit ? 'Editar Post' : 'Nuevo Post' }}</h2>
 
     <form (ngSubmit)="onSubmit()">
         <input
@@ -7,12 +7,13 @@
             name="title"
             placeholder="Título"
             required>
-    
+        <br>
         <textarea
             [(ngModel)]="post.body"
             name="body"
             placeholder="Contenido"></textarea>
+        <br>
         <button type="submit">Guardar</button>
         <button type="button" routerLink="/posts">Cancelar</button>
     </form>
-</div>>
+</div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+
 
 
 import { PostService } from '../../services/post';
@@ -30,8 +30,9 @@ export class PostForm implements OnInit{
         const id= this.route.snapshot.paramMap.get('id');
         if(id) {
             this.isEdit = true;
-            this.postService.getPostById(+id).subscribe(data=> 
-                this.post = data);
+            this.postService.getPostById(+id).subscribe(data=> {
+                console.log('POST:', data);
+                this.post = data});
         }
     }
 
